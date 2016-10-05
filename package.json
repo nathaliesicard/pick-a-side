@@ -48,6 +48,10 @@
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
+    "pui-css-alignment": "^6.0.2",
+    "pui-react-buttons": "^6.0.2",
+    "pui-react-grids": "^6.0.2",
+    "pui-react-iconography": "^6.0.2",
     "react": "^15.3.2",
     "react-dom": "^15.3.2"
   },
