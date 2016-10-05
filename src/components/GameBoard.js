@@ -1,63 +1,43 @@
 import React, { Component } from 'react';
 import { HighlightButton, HighlightAltButton } from 'pui-react-buttons';
 import { Row, Col } from 'pui-react-grids';
-import Slot from './Slot';
+import Draw from './Draw';
+import { connect } from 'react-redux'
+import { registerBet } from '../actions/index'
 
 class GameBoard extends Component {
+  handleBetLeft() {
+    console.log('A bet was made for LEFT');
+  }
+
+  handleBetRight() {
+    console.log('A bet was made for RIGHT');
+  }
 
   render() {
+    const { balance } = this.props;
     return (
       <div>
         <Row className="grid-show">
           <Col xs={10} xsOffset={7}>
             <Row className="grid-show">
-              <Col xs={12}>
-                <Slot>diamond</Slot>
-              </Col>
-              <Col xs={12}>
-                <Slot>ban</Slot>
+              <Col xs={12} xsOffset={12}>
+                Balance: <b>{ balance }</b>
               </Col>
             </Row>
-            <Row className="grid-show">
+           <Draw />
+            <Draw />
+            <Draw />
+            <Draw />
+            <Draw />
+            <Row className="grid-show" style={{marginTop: '5px'}}>
               <Col xs={12}>
-                <Slot>diamond</Slot>
-              </Col>
-              <Col xs={12}>
-                <Slot>ban</Slot>
-              </Col>
-            </Row>
-            <Row className="grid-show">
-              <Col xs={12}>
-                <Slot>diamond</Slot>
-              </Col>
-              <Col xs={12}>
-                <Slot>ban</Slot>
-              </Col>
-            </Row>
-            <Row className="grid-show">
-              <Col xs={12}>
-                <Slot>diamond</Slot>
-              </Col>
-              <Col xs={12}>
-                <Slot>ban</Slot>
-              </Col>
-            </Row>
-            <Row className="grid-show">
-              <Col xs={12}>
-                <Slot>diamond</Slot>
-              </Col>
-              <Col xs={12}>
-                <Slot>ban</Slot>
-              </Col>
-            </Row>
-            <Row className="grid-show">
-              <Col xs={12}>
-                <HighlightButton block={true} large={true}>
+                <HighlightButton onClick={() => this.handleBetLeft()} block={true} large={true}>
                   Left
                 </HighlightButton>
               </Col>
               <Col xs={12}>
-                <HighlightAltButton block={true} large={true}>
+                <HighlightAltButton onClick={() => this.handleBetRight()} block={true} large={true}>
                   Right
                 </HighlightAltButton>
               </Col>
@@ -70,4 +50,11 @@ class GameBoard extends Component {
   }
 }
 
-export default GameBoard;
+
+export default connect(store => {
+  return {
+    balance: store.balance.balance,
+   // clase: store.counter.clase,
+  }
+
+})(GameBoard)
