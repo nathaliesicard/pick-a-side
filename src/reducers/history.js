@@ -8,7 +8,8 @@ const history = (state = initialState, action) => {
         pick: action.pick,
         result: action.result
       }
-      ]
+      ].slice(-5);
+
 
     default:
       return state

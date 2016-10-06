@@ -19,7 +19,7 @@ class GameBoard extends Component {
   }
 
   getDraws() {
-    return this.props.history.slice(-5).map(
+    return this.props.history/*.slice(-5)*/.map(
       (item, i) => <Draw key={i} pick={item.pick} result={item.result}/>
     )
   }
