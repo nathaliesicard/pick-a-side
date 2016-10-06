@@ -19,3 +19,38 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+/* Animations */
+
+.correct-appear {
+  background-color: #ebeae9;
+}
+
+.correct-appear.correct-appear-active {
+  background-color: limegreen;
+  font-size: 1.2em;
+  color: darkgreen;
+}
+
+
+.wrong-appear {
+  background-color: #ebeae9;
+}
+
+.wrong-appear.wrong-appear-active {
+  background-color: red;
+  font-size: 1.2em;
+  color: darkred;
+}
+
+/*
+.rightInner-appear {
+  transform: scale(1);
+}
+
+.rightInner-appear.right-appear-active {
+  color: darkgreen;
+  transform: scale(1.4);
+}
+*/

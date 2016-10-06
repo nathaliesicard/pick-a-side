@@ -8,25 +8,24 @@ import { registerBet } from '../actions/index'
 class GameBoard extends Component {
   handleBetLeft() {
     const { dispatch } = this.props;
-    console.log('A bet was made for LEFT');
+   // console.log('A bet was made for LEFT');
     dispatch(registerBet('LEFT'));
   }
 
   handleBetRight() {
     const { dispatch } = this.props;
-    console.log('A bet was made for RIGHT');
+   // console.log('A bet was made for RIGHT');
     dispatch(registerBet('RIGHT'));
   }
 
   getDraws() {
-    return this.props.history/*.slice(-5)*/.map(
-      (item, i) => <Draw key={i} pick={item.pick} result={item.result}/>
-    )
+    return this.props.history.map(
+      (item, i) => <Draw key={i} id={item.id} pick={item.pick} result={item.result}/>
+    ).slice(-5)
   }
 
   render() {
-    const { balance, history } = this.props;
-      console.log(history);
+    const { balance } = this.props;
     return (
       <div>
         <Row className="grid-show">
