@@ -20,37 +20,133 @@
   to { transform: rotate(360deg); }
 }
 
+.slot {
+  background-color: #ebeae9;
+  padding: 10px;
+  color: #333;
+  border-radius: 3px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 
 /* Animations */
 
+/*
+==============================================
+slideUp
+==============================================
+*/
+
+
+.slideUp{
+  animation-name: slideUp;
+  -webkit-animation-name: slideUp;
+
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+
+  animation-timing-function: ease;
+  -webkit-animation-timing-function: ease;
+
+  visibility: visible !important;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(100%);
+  }
+  50%{
+    transform: translateY(-8%);
+  }
+  65%{
+    transform: translateY(4%);
+  }
+  80%{
+    transform: translateY(-4%);
+  }
+  95%{
+    transform: translateY(2%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes slideUp {
+  0% {
+    -webkit-transform: translateY(100%);
+  }
+  50%{
+    -webkit-transform: translateY(-8%);
+  }
+  65%{
+    -webkit-transform: translateY(4%);
+  }
+  80%{
+    -webkit-transform: translateY(-4%);
+  }
+  95%{
+    -webkit-transform: translateY(2%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+  }
+}
+
+
+/* React animations */
+
 .correct-appear {
-  background-color: #ebeae9;
 }
 
 .correct-appear.correct-appear-active {
   background-color: limegreen;
-  font-size: 1.2em;
   color: darkgreen;
+  animation-name: slideUp;
+  -webkit-animation-name: slideUp;
+
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+
+  animation-timing-function: ease;
+  -webkit-animation-timing-function: ease;
+
+  visibility: visible !important;
 }
 
 
 .wrong-appear {
-  background-color: #ebeae9;
 }
 
 .wrong-appear.wrong-appear-active {
   background-color: red;
-  font-size: 1.2em;
   color: darkred;
+  animation-name: slideUp;
+  -webkit-animation-name: slideUp;
+
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+
+  animation-timing-function: ease;
+  -webkit-animation-timing-function: ease;
+
+  visibility: visible !important;
 }
 
-/*
-.rightInner-appear {
-  transform: scale(1);
+.none-appear {
 }
 
-.rightInner-appear.right-appear-active {
-  color: darkgreen;
-  transform: scale(1.4);
+.none-appear.none-appear-active {
+  background-color: #ebeae9;
+  animation-name: slideUp;
+  -webkit-animation-name: slideUp;
+
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+
+  animation-timing-function: ease;
+  -webkit-animation-timing-function: ease;
+
+  visibility: visible !important;
 }
-*/
+
