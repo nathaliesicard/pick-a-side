@@ -37,12 +37,12 @@ class Draw extends Component {
 
     return (
       <Row className="grid-show">
-        <Col xs={12}>
-          <Slot id={this.props.id} animation={animationLeft}>{leftSlot}</Slot>
-        </Col>
-        <Col xs={12}>
-          <Slot id={this.props.id} animation={animationRight}>{rightSlot}</Slot>
-        </Col>
+          <Col xs={12}>
+            <Slot id={this.props.id} animation={animationLeft}>{leftSlot}</Slot>
+          </Col>
+          <Col xs={12}>
+            <Slot id={this.props.id} animation={animationRight}>{rightSlot}</Slot>
+          </Col>
       </Row>
 
     );

@@ -4,6 +4,8 @@ import { Row, Col } from 'pui-react-grids';
 import Draw from './Draw';
 import { connect } from 'react-redux'
 import { registerBet } from '../actions/index'
+import FlipMove from 'react-flip-move';
+
 
 class GameBoard extends Component {
   handleBetLeft() {
@@ -35,7 +37,16 @@ class GameBoard extends Component {
                 Balance: <b>{ balance }</b>
               </Col>
             </Row>
+            <FlipMove
+              staggerDurationBy="30"
+              duration={500}
+              enterAnimation='accordianVertical'
+              leaveAnimation='accordianVertical'
+              typeName="div"
+            >
+
             {this.getDraws()}
+            </FlipMove>
             <Row className="grid-show" style={{marginTop: '5px'}}>
               <Col xs={12}>
                 <HighlightButton onClick={() => this.handleBetLeft()} block={true} large={true}>
